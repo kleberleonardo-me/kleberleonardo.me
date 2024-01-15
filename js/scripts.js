@@ -11,9 +11,9 @@ window.onload = function() {
     var hours =  date.getHours();
     var minutes =  date.getMinutes();
     var current = hours + (minutes * .01);
-    if (current >= 5 && current < 12) return 'Tenha um bom dia!';
-    if (current >= 12 && current < 18) return 'Tenha uma ótima tarde!';
-    if (current >= 18 || current < 2) return 'Tenha uma boa noite!';
+    if (current >= 5 && current < 12) return 'Tenha um bom dia por aí!';
+    if (current >= 12 && current < 18) return 'Tenha uma ótima tarde por aí!';
+    if (current >= 18 || current < 2) return 'Tenha uma boa noite por aí!';
   }
 
   var messages = [
