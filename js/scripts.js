@@ -6,17 +6,18 @@ window.onload = function() {
   var loadingText = '<b>•</b><b>•</b><b>•</b>';
   var messageIndex = 0;
 
-  var getCurrentTime = function() {
+var getCurrentTime = function() {
     var date = new Date();
     var hours =  date.getHours();
-    var minutes =  date.getMinutes();
-    var current = hours + (minutes * .01);
+    var minutes =  date.getMinutes() / 60; // Convertendo minutos em fração de horas
+    var current = hours + minutes;
+
     if (current >= 5 && current < 12) return 'Tenha um bom dia por aí!';
     if (current >= 12 && current < 18) return 'Tenha uma ótima tarde por aí!';
     if (current >= 18 || current < 2) return 'Tenha uma boa noite por aí!';
-  }
+}
 
-  var messages = [
+var messages = [
     'Olá! 🙋🏻 Sou o Kleber e',
     'crio páginas impactantes para',
     'turbinar sua presença nas buscas.',
@@ -31,9 +32,10 @@ window.onload = function() {
     'Instagram ou WhatsApp.',
     'Curioso? Manda ver nas perguntas! :)',
     'meu número você já tem.',
-     getCurrentTime(),
+    getCurrentTime(),
     '👀 Te espero!! 👋🏻'
-  ]
+];
+
 
   var getFontSize = function() {
     return parseInt(getComputedStyle(document.body).getPropertyValue('font-size'));
