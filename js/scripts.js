@@ -19,21 +19,23 @@ var getCurrentTime = function() {
 
 var messages = [
     'Olá! 🙋🏻 Sou o Kleber e',
-    'crio páginas impactantes para',
-    'turbinar sua presença nas buscas.',
-    'Vamos dar um up no seu perfil',
-    'do Google Meu Negócio adicionando',
-    'uma página como essa?',
-    'Essa página foi feita para garantir',
-    'que o visitante vai ler tudo e',   
-    'por apenas R$ 90, você garante',
-    'um link top: bemtevi.online/(seu-negócio),',
-    'com direcionamento para o',
-    'Instagram ou WhatsApp.',
-    'Curioso? Manda ver nas perguntas! :)',
-    'meu número você já tem.',
+    'desenvolvo páginas web impactantes para',
+    'otimizar a sua presença digital.',
+    'Vamos aprimorar o seu perfil no',
+    'Google Meu Negócio com uma página',
+    'profissional como esta?',
+    'Esta página foi cuidadosamente criada',
+    'para garantir uma experiência completa',
+    'ao visitante, que vai ler todo o texto.',
+    'Por apenas R$ 90, você garante um link',
+    'premium: bemtevi.online/(seu-negócio),',
+    'com redirecionamento para o',
+    'seu Instagram ou WhatsApp.',
+    'Interessado? Estou à disposição',
+    'para esclarecer suas dúvidas!',
+    'Meu contato você já tem.',
     getCurrentTime(),
-    '👀 Te espero!! 👋🏻'
+    'Aguardo seu retorno no whats! 👋🏻'
 ];
 
 
