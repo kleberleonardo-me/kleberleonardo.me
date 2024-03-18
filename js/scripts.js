@@ -7,14 +7,18 @@ window.onload = function() {
   var messageIndex = 0;
 
 var getCurrentTime = function() {
-    var date = new Date();
-    var options = { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' };
-    var localTime = date.toLocaleTimeString('pt-BR', options);
-    return `Hora local (Brasil): ${localTime}`;
+  var date = new Date();
+  var options = { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' };
+  var localTime = date.toLocaleTimeString('pt-BR', options);
 
-    if (current >= 5 && current < 12) return 'Tenha um bom dia por aí!';
-    if (current >= 12 && current < 18) return 'Tenha uma ótima tarde por aí!';
-    if (current >= 18 || current < 2) return 'Tenha uma boa noite por aí!';
+  // Definindo a variável current
+  var current = date.getHours();
+
+  return `Hora local (Brasil): ${localTime}`;
+
+  if (current >= 5 && current < 12) return 'Tenha um bom dia por aí!';
+  if (current >= 12 && current < 18) return 'Tenha uma ótima tarde por aí!';
+  if (current >= 18 || current < 2) return 'Tenha uma boa noite por aí!';
 }
 
 var messages = [
