@@ -17,7 +17,7 @@ window.onload = function() {
   }
 
   var messages = [
-    'Olá! 🙋🏻 Sou o Kleber e'
+    'Olá! 🙋🏻 Sou o Kleber e',
     'crio páginas impactantes para',
     'turbinar sua presença nas buscas.',
     'Vamos dar um up no seu perfil',
@@ -29,8 +29,8 @@ window.onload = function() {
     'um link top: bemtevi.online/(seu-negócio),',
     'com direcionamento para o',
     'Instagram ou WhatsApp.',
-    'Curioso? Manda ver nas perguntas! :)'
-    'meu número você já tem.'
+    'Curioso? Manda ver nas perguntas! :)',
+    'meu número você já tem.',
      getCurrentTime(),
     '👀 Te espero!! 👋🏻'
   ]
