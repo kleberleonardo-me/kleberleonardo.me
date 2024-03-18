@@ -17,31 +17,20 @@ window.onload = function() {
   }
 
   var messages = [
-    'Olá! :)',
-    'Fico contente que abriu o link! 🙋🏻',
-    'Meu nome é Kleber e',
-    'Eu crio páginas para alavancar',
-    'sua empresa na busca do Google.',
-    'Deixa eu explicar melhor:',
-    'Eu te encontrei buscando seu',
-    'tipo de negócio na busca pelo meu',
-    'bairro no Google e apareceram',
-    'outros concorrentes na frente.',
-    'Sabe por quê?! ⤵️',
-    'Eles tem uma coisa que você não',
-    'possui: link de redirecionamento.',
-    'Te proponho que eu faça um igual',
-    'a esse meu que foi feito para',
-    'prender a atenção da pessoa e',
-    'garantir que ela vai ler tudo.',
-    'Porque dessa maneira, tu que vai',
-    'levar vantagem sobre seus',
-    'concorrentes. Cobro apenas R$ 90',
-    'e ficará com o link assim:',
-    'bemtevi.online/(seu-negócio)',
-    'Meu WhatsApp você já tem',
-    'se quiser saber mais, fique',
-    'à vontade para me perguntar! :)',
+    'Olá! 🙋🏻 Sou o Kleber e'
+    'crio páginas impactantes para',
+    'turbinar sua presença nas buscas.',
+    'Vamos dar um up no seu perfil',
+    'do Google Meu Negócio adicionando',
+    'uma página como essa?',
+    'Essa página foi feita para garantir',
+    'que o visitante vai ler tudo e',   
+    'por apenas R$ 90, você garante',
+    'um link top: bemtevi.online/(seu-negócio),',
+    'com direcionamento para o',
+    'Instagram ou WhatsApp.',
+    'Curioso? Manda ver nas perguntas! :)'
+    'meu número você já tem.'
      getCurrentTime(),
     '👀 Te espero!! 👋🏻'
   ]
