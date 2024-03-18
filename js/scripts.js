@@ -14,7 +14,7 @@ var getCurrentTime = function() {
   // Definindo a variável current
   var current = date.getHours();
 
-  return `Hora local (Brasil): ${localTime}`;
+  return `${localTime}`;
 
   if (current >= 5 && current < 12) return 'Tenha um bom dia por aí!';
   if (current >= 12 && current < 18) return 'Tenha uma ótima tarde por aí!';
