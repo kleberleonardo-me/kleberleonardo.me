@@ -8,9 +8,9 @@ window.onload = function() {
 
 var getCurrentTime = function() {
     var date = new Date();
-    var hours =  date.getHours();
-    var minutes =  date.getMinutes() / 60; // Convertendo minutos em fração de horas
-    var current = hours + minutes;
+    var options = { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' };
+    var localTime = date.toLocaleTimeString('pt-BR', options);
+    return `Hora local (Brasil): ${localTime}`;
 
     if (current >= 5 && current < 12) return 'Tenha um bom dia por aí!';
     if (current >= 12 && current < 18) return 'Tenha uma ótima tarde por aí!';
