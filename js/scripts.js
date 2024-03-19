@@ -6,20 +6,42 @@ window.onload = function() {
   var loadingText = '<b>•</b><b>•</b><b>•</b>';
   var messageIndex = 0;
 
-var getCurrentTime = function() {
-  var date = new Date();
-  var options = { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' };
-  var localTime = date.toLocaleTimeString('pt-BR', options);
+function getCurrentTime() {
+  // Obter a data e hora atual
+  const date = new Date();
 
-  // Definindo a variável current
-  var current = date.getHours();
+  // Obter o fuso horário do navegador
+  const options = {
+    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    hour: '2-digit',
+    minute: '2-digit',
+  };
 
-  return `${localTime}`;
+  // Formatar a data e hora no fuso horário local
+  const localTime = date.toLocaleTimeString('pt-BR', options);
 
-  if (current >= 5 && current < 12) return 'Tenha um bom dia por aí!';
-  if (current >= 12 && current < 18) return 'Tenha uma ótima tarde por aí!';
-  if (current >= 18 || current < 2) return 'Tenha uma boa noite por aí!';
+  // Obter a hora atual
+  const hours = parseInt(localTime.split(':')[0]);
+
+  // Definir a saudação
+  let greeting;
+  if (hours >= 5 && hours < 12) {
+    greeting = 'Tenha um bom dia por aí!';
+  } else if (hours >= 12 && hours < 18) {
+    greeting = 'Tenha uma ótima tarde por aí!';
+  } else {
+    greeting = 'Tenha uma boa noite por aí!';
+  }
+
+  // Retornar a saudação
+  return greeting;
 }
+
+// Exemplo de uso
+const greeting = getCurrentTime();
+
+console.log(greeting); // Exibe a saudação "Tenha um bom dia!", "Boa tarde!" ou "Boa noite!"
+
 
 var messages = [
     'Olá! 🙋🏻 Sou o Kleber e',
