@@ -45,7 +45,7 @@ console.log(greeting); // Exibe a saudação "Tenha um bom dia!", "Boa tarde!" o
 
 var messages = [
     'Olá! 🙋🏻 Sou o Kleber,',
-    'moro em São Paulo - SP e',
+    'moro em São Paulo/SP e',
     'desenvolvo páginas web impactantes para',
     'otimizar sua presença digital. Isso faz',
     'com que você atraia mais clientes e',
