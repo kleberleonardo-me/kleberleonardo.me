@@ -26,11 +26,11 @@ function getCurrentTime() {
   // Definir a saudação
   let greeting;
   if (hours >= 5 && hours < 12) {
-    greeting = 'Tenha um bom dia por aí! 👋🏻';
+    greeting = 'Tenha um bom dia por aí!';
   } else if (hours >= 12 && hours < 18) {
-    greeting = 'Tenha uma ótima tarde por aí! 👋🏻';
+    greeting = 'Tenha uma ótima tarde por aí!';
   } else {
-    greeting = 'Tenha uma boa noite por aí! 👋🏻';
+    greeting = 'Tenha uma boa noite por aí!';
   }
 
   // Retornar a saudação
@@ -44,7 +44,8 @@ console.log(greeting); // Exibe a saudação "Tenha um bom dia!", "Boa tarde!" o
 
 
 var messages = [
-    'Olá! 🙋🏻 Sou o Kleber e',
+    'Olá! 🙋🏻 Sou o Kleber,',
+    'moro em São Paulo - SP e',
     'desenvolvo páginas web impactantes para',
     'otimizar sua presença digital. Isso faz',
     'com que você atraia mais clientes e',
@@ -71,6 +72,7 @@ var messages = [
     'e então marcamos um café',
     'ou um whisky. 🫡',
     getCurrentTime(),
+    '👋🏻',
 ];
 
 
