@@ -42,11 +42,6 @@ const greeting = getCurrentTime();
 
 console.log(greeting); // Exibe a saudação "Tenha um bom dia!", "Boa tarde!" ou "Boa noite!"
 
-// direcionamento do alô  
-function form() {
-   window.location.href = "https://tally.so/r/nPAV2d";
-}
-
 
 var messages = [
     'Olá! 🙋🏻 Sou o Kleber e',
@@ -72,7 +67,7 @@ var messages = [
     'que cumpre o papel de toda uma equipe',
     'de marketing focada na inteligência',
     'particular do seu negócio.',
-    'Espero um 👉🏻 <span onclick="form()">alô</span> 👈🏻 da sua parte',
+    'Espero um 👉🏻<a href="https://tally.so/r/nPAV2d">alô</a>👈🏻 da sua parte',
     'e então marcamos um café',
     'ou um whisky. 🫡',
     getCurrentTime(),
