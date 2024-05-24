@@ -54,7 +54,7 @@ var messages = [
     'algo que prenda a sua',
     'atenção e assim fazer você ler',
     'minha apresentação. Mas',
-    'cada site tem seu propósito único,',
+    'cada site tem seu singular propósito,',
     'projetado para que você ganhe',
     'vantagens competitivas sobre seus',
     'concorrentes na avenida mais',
