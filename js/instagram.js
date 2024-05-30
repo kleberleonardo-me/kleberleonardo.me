@@ -53,7 +53,7 @@ var messages = [
     'posição estratégica,',
     'não se preocupando',
     'com clientes.',
-    'Manda um 👉🏻<a href="https://form.kleberleonardo.me">alô</a>👈🏻',
+    'Espero um 👉🏻<a href="https://form.kleberleonardo.me">alô</a>👈🏻',
     'para falarmos mais sobre.',
     getCurrentTime(),
     '👋🏻',
