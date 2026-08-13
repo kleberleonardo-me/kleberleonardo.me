@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BRASA — Alta Gastronomia à Brasa</title>
+<meta name="description" content="BRASA — cozinha contemporânea construída sobre fogo, tempo e memória. Menu degustação, brasa viva e uma carta de vinhos autoral.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind (Play CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg: '#0b0907',
+          panel: '#150f0c',
+          panel2: '#1c1511',
+          ember: '#e2612c',
+          emberhot: '#ff8a4c',
+          gold: '#c9a15a',
+          cream: '#f4ecdf',
+          smoke: '#9c9088',
+          line: 'rgba(244,236,223,0.12)'
+        },
+        fontFamily: {
+          display: ['"Cinzel"', 'serif'],
+          heading: ['"Playfair Display"', 'serif'],
+          body: ['"Plus Jakarta Sans"', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-bg text-cream font-body antialiased">
+
+<!-- ===== CURSOR CUSTOMIZADO ===== -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ===== LOADER ===== -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <span class="loader-mark">BRASA</span>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-40">
+  <nav class="flex items-center justify-between px-6 md:px-10 py-5 md:py-6">
+    <a href="#top" class="brand-mark magnetic" data-magnetic-strength="0.3">BRASA</a>
+
+    <ul class="hidden lg:flex items-center gap-10 nav-links">
+      <li><a href="#conceito" class="nav-link">Conceito</a></li>
+      <li><a href="#cardapio" class="nav-link">Cardápio</a></li>
+      <li><a href="#galeria" class="nav-link">Galeria</a></li>
+      <li><a href="#reservas" class="nav-link">Reservas</a></li>
+      <li><a href="#contato" class="nav-link">Contato</a></li>
+    </ul>
+
+    <a href="#reservas" class="hidden lg:inline-flex btn-line magnetic" data-magnetic-strength="0.4">
+      <span>Reservar Mesa</span>
+    </a>
+
+    <button id="menu-toggle" class="lg:hidden burger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ===== MENU MOBILE FULLSCREEN ===== -->
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+  <ul class="mobile-menu-links">
+    <li><a href="#conceito" data-idx="01">Conceito</a></li>
+    <li><a href="#cardapio" data-idx="02">Cardápio</a></li>
+    <li><a href="#galeria" data-idx="03">Galeria</a></li>
+    <li><a href="#reservas" data-idx="04">Reservas</a></li>
+    <li><a href="#contato" data-idx="05">Contato</a></li>
+  </ul>
+  <div class="mobile-menu-foot">
+    <span>Ter – Sáb, 19h às 00h</span>
+    <a href="tel:+551130405060">+55 11 3040-5060</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero">
+    <div class="hero-bg" data-parallax>
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2400&auto=format&fit=crop" alt="Salão do restaurante BRASA em tons quentes e iluminação baixa" loading="eager">
+      <div class="hero-overlay"></div>
+      <div class="hero-embers" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <span class="eyebrow reveal-up" data-delay="0">Alta Gastronomia ao Vivo — São Paulo</span>
+      <h1 class="hero-title">
+        <span class="line"><span class="reveal-char">B</span><span class="reveal-char">R</span><span class="reveal-char">A</span><span class="reveal-char">S</span><span class="reveal-char">A</span></span>
+      </h1>
+      <p class="hero-sub reveal-up" data-delay="0.15">Cozinha contemporânea construída sobre fogo, tempo e memória.</p>
+
+      <div class="hero-cta reveal-up" data-delay="0.3">
+        <a href="#reservas" class="btn-solid magnetic" data-magnetic-strength="0.5">
+          <span>Reservar Mesa</span>
+        </a>
+        <a href="#cardapio" class="btn-ghost magnetic" data-magnetic-strength="0.5">
+          <span>Ver Cardápio</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-cue reveal-up" data-delay="0.5">
+      <span>Role para descobrir</span>
+      <div class="scroll-cue-line"><i></i></div>
+    </div>
+  </section>
+
+  <!-- ===== DIVISOR DE BRASA (assinatura) ===== -->
+  <div class="ember-divider" data-ember-divider>
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,20 C150,2 250,38 400,20 C550,2 650,38 800,20 C950,2 1050,38 1200,20" />
+    </svg>
+  </div>
+
+  <!-- ===== CONCEITO ===== -->
+  <section id="conceito" class="section conceito">
+    <div class="container">
+      <div class="conceito-grid">
+
+        <div class="conceito-text">
+          <span class="eyebrow reveal-up">O Conceito</span>
+          <h2 class="heading-xl reveal-up">Cozinha ao vivo,<br>sem pressa.</h2>
+          <p class="body-lg reveal-up">
+            Na BRASA, o fogo não é técnica de apoio — é a coluna vertebral do cardápio.
+            Trabalhamos com carvão, madeiras nobres e brasa direta para revelar texturas
+            que o calor industrial não alcança. Cada prato nasce de um diálogo entre
+            o produtor, a estação do ano e o tempo que o fogo exige.
+          </p>
+          <p class="body-lg reveal-up">
+            Sob o comando do chef <strong>Theo Amaral</strong>, a cozinha aberta funciona
+            como um palco: o cliente acompanha o corte, a fumaça, o ponto exato em que
+            o ingrediente se transforma. Não há atalhos — só ingrediente, fogo e paciência.
+          </p>
+
+          <div class="conceito-stats reveal-up">
+            <div class="stat">
+              <span class="stat-value">2016</span>
+              <span class="stat-label">Ano de fundação</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">9</span>
+              <span class="stat-label">Tempos no menu degustação</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">12</span>
+              <span class="stat-label">Lugares por turno na cozinha aberta</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="conceito-media">
+          <div class="media-card media-card--tall reveal-scale" data-parallax-y="-40">
+            <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=1600&auto=format&fit=crop" alt="Chef trabalhando diretamente sobre a brasa" loading="lazy">
+          </div>
+          <div class="media-card media-card--short reveal-scale" data-parallax-y="30">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop" alt="Prato de alta gastronomia finalizado com ervas frescas" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="ember-divider" data-ember-divider>
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,20 C150,38 250,2 400,20 C550,38 650,2 800,20 C950,38 1050,2 1200,20" />
+    </svg>
+  </div>
+
+  <!-- ===== CARDÁPIO ===== -->
+  <section id="cardapio" class="section menu-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow reveal-up">Cardápio Selecionado</span>
+        <h2 class="heading-xl reveal-up">O que sai da brasa hoje</h2>
+      </div>
+
+      <div class="menu-tabs reveal-up" role="tablist" aria-label="Categorias do cardápio">
+        <button class="menu-tab is-active" data-tab="entradas" role="tab" aria-selected="true">Entradas</button>
+        <button class="menu-tab" data-tab="principais" role="tab" aria-selected="false">Principais</button>
+        <button class="menu-tab" data-tab="sobremesas" role="tab" aria-selected="false">Sobremesas</button>
+        <button class="menu-tab" data-tab="drinks" role="tab" aria-selected="false">Drinks</button>
+        <span class="menu-tab-indicator" aria-hidden="true"></span>
+      </div>
+
+      <div class="menu-panels">
+
+        <div class="menu-panel is-active" data-panel="entradas" role="tabpanel">
+          <div class="menu-list">
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Ostra Defumada na Brasa</h3>
+                <span class="menu-price">R$ 68</span>
+              </div>
+              <p>Ostra fresca, manteiga de alho-poró queimado, limão-cravo</p>
+              <span class="tag tag--signature">Signature</span>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Pão de Fermentação Natural</h3>
+                <span class="menu-price">R$ 42</span>
+              </div>
+              <p>Manteiga de banha curada, sal de ervas do jardim</p>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Carpaccio de Beterraba Assada</h3>
+                <span class="menu-price">R$ 58</span>
+              </div>
+              <p>Queijo de cabra levemente fumado, avelãs tostadas</p>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Tartare de Atum</h3>
+                <span class="menu-price">R$ 76</span>
+              </div>
+              <p>Gengibre, shoyu envelhecido, óleo de dendê</p>
+              <span class="tag tag--chef">Chef's Choice</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-panel" data-panel="principais" role="tabpanel" hidden>
+          <div class="menu-list">
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Costela Bovina 36h na Brasa</h3>
+                <span class="menu-price">R$ 168</span>
+              </div>
+              <p>Purê de mandioquinha, jus defumado, farofa de castanhas</p>
+              <span class="tag tag--signature">Signature</span>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Peixe do Dia na Brasa de Carvão</h3>
+                <span class="menu-price">R$ 142</span>
+              </div>
+              <p>Legumes da estação, beurre blanc de maracujá</p>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Cordeiro Confitado ao Alecrim</h3>
+                <span class="menu-price">R$ 156</span>
+              </div>
+              <p>Polenta cremosa, redução de jabuticaba</p>
+              <span class="tag tag--chef">Chef's Choice</span>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Risoto de Cogumelos Selvagens</h3>
+                <span class="menu-price">R$ 118</span>
+              </div>
+              <p>Parmesão 24 meses, lâminas de trufa negra</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-panel" data-panel="sobremesas" role="tabpanel" hidden>
+          <div class="menu-list">
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Chocolate 70% Defumado</h3>
+                <span class="menu-price">R$ 46</span>
+              </div>
+              <p>Sorvete de café, farofa de cacau tostado</p>
+              <span class="tag tag--signature">Signature</span>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Pavê de Doce de Leite Queimado</h3>
+                <span class="menu-price">R$ 38</span>
+              </div>
+              <p>Crocante de castanha-do-pará</p>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Sorbet de Frutas da Estação</h3>
+                <span class="menu-price">R$ 32</span>
+              </div>
+              <p>Seleção conforme a colheita do dia</p>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Queijos Selecionados</h3>
+                <span class="menu-price">R$ 54</span>
+              </div>
+              <p>Mel de brasa, castanhas tostadas, geleia da casa</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-panel" data-panel="drinks" role="tabpanel" hidden>
+          <div class="menu-list">
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Old Fashioned de Brasa</h3>
+                <span class="menu-price">R$ 52</span>
+              </div>
+              <p>Bourbon defumado em madeira de carvalho</p>
+              <span class="tag tag--signature">Signature</span>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Caipirinha de Jabuticaba</h3>
+                <span class="menu-price">R$ 38</span>
+              </div>
+              <p>Cachaça envelhecida, jabuticaba fresca</p>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Negroni Tropical</h3>
+                <span class="menu-price">R$ 48</span>
+              </div>
+              <p>Gin nacional, cássis, laranja queimada</p>
+              <span class="tag tag--chef">Chef's Choice</span>
+            </article>
+            <article class="menu-item">
+              <div class="menu-item-top">
+                <h3>Coquetel Sem Álcool</h3>
+                <span class="menu-price">R$ 32</span>
+              </div>
+              <p>Kombuchá de hibisco, especiarias quentes</p>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="ember-divider" data-ember-divider>
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,20 C150,2 250,38 400,20 C550,2 650,38 800,20 C950,2 1050,38 1200,20" />
+    </svg>
+  </div>
+
+  <!-- ===== GALERIA ===== -->
+  <section id="galeria" class="section galeria">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow reveal-up">Experiência Visual</span>
+        <h2 class="heading-xl reveal-up">Fogo, fumaça e ambiente</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item gallery-item--a reveal-scale">
+          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1400&auto=format&fit=crop" alt="Prato autoral servido em ambiente escuro" loading="lazy">
+          <figcaption>Prato do dia</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--b reveal-scale">
+          <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1400&auto=format&fit=crop" alt="Detalhe de emplatamento fine dining" loading="lazy">
+          <figcaption>Emplatamento</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--c reveal-scale">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1400&auto=format&fit=crop" alt="Corte de carne grelhada na brasa" loading="lazy">
+          <figcaption>Corte na brasa</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--d reveal-scale">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=1400&auto=format&fit=crop" alt="Mesa posta do salão principal" loading="lazy">
+          <figcaption>Salão principal</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--e reveal-scale">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1400&auto=format&fit=crop" alt="Prato com molho escuro e ervas" loading="lazy">
+          <figcaption>Molhos da casa</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--f reveal-scale">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?q=80&w=1400&auto=format&fit=crop" alt="Ambiente noturno do restaurante" loading="lazy">
+          <figcaption>Ambiente noturno</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="ember-divider" data-ember-divider>
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,20 C150,38 250,2 400,20 C550,38 650,2 800,20 C950,38 1050,2 1200,20" />
+    </svg>
+  </div>
+
+  <!-- ===== RESERVAS ===== -->
+  <section id="reservas" class="section reservas">
+    <div class="container reservas-grid">
+
+      <div class="reservas-intro">
+        <span class="eyebrow reveal-up">Reservas</span>
+        <h2 class="heading-xl reveal-up">Guarde seu lugar<br>junto ao fogo.</h2>
+        <p class="body-lg reveal-up">
+          Aceitamos reservas com até 60 dias de antecedência. Grupos acima de 8 pessoas,
+          entre em contato diretamente pelo telefone para montarmos um menu especial.
+        </p>
+        <ul class="reservas-info reveal-up">
+          <li><i data-lucide="clock"></i><span>Ter – Sáb, das 19h às 00h</span></li>
+          <li><i data-lucide="users"></i><span>Grupos de até 8 pessoas online</span></li>
+          <li><i data-lucide="shirt"></i><span>Traje esporte fino</span></li>
+        </ul>
+      </div>
+
+      <form id="reserva-form" class="reserva-form reveal-up" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+          </div>
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" required placeholder="(11) 90000-0000">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required placeholder="voce@email.com">
+        </div>
+
+        <div class="form-row form-row--four">
+          <div class="field">
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required>
+          </div>
+          <div class="field">
+            <label for="horario">Horário</label>
+            <select id="horario" name="horario" required>
+              <option value="" disabled selected>Escolher</option>
+              <option>19:00</option>
+              <option>19:30</option>
+              <option>20:00</option>
+              <option>20:30</option>
+              <option>21:00</option>
+              <option>21:30</option>
+              <option>22:00</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="pessoas">Pessoas</label>
+            <select id="pessoas" name="pessoas" required>
+              <option value="" disabled selected>Qtd.</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="area">Área</label>
+            <select id="area" name="area" required>
+              <option value="" disabled selected>Preferência</option>
+              <option>Salão Principal</option>
+              <option>Terraço</option>
+              <option>Chef's Table</option>
+              <option>Bar</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="obs">Observações <span>(opcional)</span></label>
+          <textarea id="obs" name="obs" rows="3" placeholder="Restrições alimentares, ocasião especial, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn-solid btn-solid--full magnetic" data-magnetic-strength="0.3">
+          <span class="btn-label-default">Confirmar Reserva</span>
+          <span class="btn-label-success">Reserva recebida <i data-lucide="check"></i></span>
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contato" class="footer">
+  <div class="ember-divider" data-ember-divider>
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,20 C150,2 250,38 400,20 C550,2 650,38 800,20 C950,2 1050,38 1200,20" />
+    </svg>
+  </div>
+
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <span class="brand-mark brand-mark--footer">BRASA</span>
+      <p>Alta gastronomia contemporânea, construída sobre fogo, tempo e memória.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram" class="magnetic"><i data-lucide="instagram"></i></a>
+        <a href="#" aria-label="Facebook" class="magnetic"><i data-lucide="facebook"></i></a>
+        <a href="#" aria-label="WhatsApp" class="magnetic"><i data-lucide="message-circle"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <p><i data-lucide="map-pin"></i> Rua dos Jequitibás, 482 — Jardins, São Paulo</p>
+      <p><i data-lucide="phone"></i> <a href="tel:+551130405060">+55 11 3040-5060</a></p>
+      <p><i data-lucide="mail"></i> <a href="mailto:reservas@brasa.rest">reservas@brasa.rest</a></p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Horário</h4>
+      <p>Terça — Sábado<br><span>19h00 às 00h00</span></p>
+      <p>Domingo &amp; Segunda<br><span>Fechado</span></p>
+    </div>
+
+    <div class="footer-map">
+      <div class="mini-map" aria-hidden="true">
+        <div class="mini-map-grid"></div>
+        <span class="mini-map-pin"><i data-lucide="map-pin"></i></span>
+      </div>
+      <a href="#" class="map-link">Ver no mapa <i data-lucide="arrow-up-right"></i></a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom container">
+    <span>© 2026 BRASA Alta Gastronomia. Todos os direitos reservados.</span>
+    <span>Feito com fogo e paciência.</span>
+  </div>
+</footer>
+
+<!-- ===== LIBS ===== -->
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
