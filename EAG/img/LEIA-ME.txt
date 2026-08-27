@@ -1,0 +1,12 @@
+Coloque aqui a foto do profissional:
+
+  img/pedreiro.png
+
+Especificações recomendadas:
+- PNG com fundo 100% transparente (recorte em alta qualidade).
+- Corpo inteiro ou 3/4, pose confiante (braços cruzados, uniforme/EPI).
+- Resolução mínima: 1600 x 2200 px (proporção retrato).
+- Boa iluminação, foco nítido no rosto.
+
+Enquanto o arquivo não existir, o site exibe automaticamente um
+placeholder estilizado (silhueta) no lugar da foto — o layout não quebra.
