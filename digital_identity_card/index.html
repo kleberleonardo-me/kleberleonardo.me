@@ -1,0 +1,110 @@
+a<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Digital Identity — Signature Card</title>
+    <meta name="description" content="Digital Identity Card - High-end bespoke digital experience.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Digital Identity — Executive Card">
+    <meta property="og:description" content="Bespoke Digital Identity & Direct Communication Channel.">
+    <meta property="og:image" content="img/avatar.jpg">
+
+    <!-- Fonts: Google Fonts (Syne for high-end bespoke feel, Inter for crisp UI typography) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Canvas for subtle atmospheric noise/particles -->
+    <canvas id="atmosphere-canvas"></canvas>
+
+    <!-- Main Container - Single Viewport Master Piece -->
+    <main class="app-viewport">
+        <!-- Ambient Atmospheric Lighting -->
+        <div class="ambient-glow ambient-glow-1"></div>
+        <div class="ambient-glow ambient-glow-2"></div>
+        <div class="ambient-grid"></div>
+
+        <!-- Digital Identity Frame -->
+        <div class="card-container" id="cardContainer">
+            <!-- Glass Overlay Lines -->
+            <div class="card-border-glow"></div>
+            
+            <!-- Top Status Bar / Identity Badge -->
+            <div class="card-header">
+                <div class="status-indicator">
+                    <span class="pulse-dot"></span>
+                    <span class="status-text">DISPONÍVEL PARA CONTATO</span>
+                </div>
+                <div class="security-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>ID VERIFICADO</span>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="card-content">
+                <!-- Visual Pillar: Portrait Showcase -->
+                <div class="portrait-wrapper">
+                    <div class="portrait-frame">
+                        <div class="portrait-glow"></div>
+                        <img src="img/avatar.jpg" alt="Digital Identity Portrait" id="portraitImg" class="portrait-img" draggable="false">
+                        <div class="portrait-mask"></div>
+                        <div class="portrait-corner corner-tl"></div>
+                        <div class="portrait-corner corner-br"></div>
+                    </div>
+                </div>
+
+                <!-- Textual Pillar: Identity & Position -->
+                <div class="identity-wrapper">
+                   <!-- <div class="identity-tag">apresentação rápida:</div> -->
+                    <h1 class="identity-name">
+                        <span class="first-name">KLEBER</span>
+                        <span class="last-name">LEONARDO</span>
+                    </h1>
+                    <h2 class="identity-role">AUTOMAÇÃO DE PROCESSOS COM Ia</h2>
+                    
+                    <p class="identity-statement">
+                        Ajudo empresários a automatizar processos com IA, reduzindo tarefas operacionais, liberando tempo e fornecendo informações para apoiar melhores decisões estratégicas.
+                    </p>
+
+                    <!-- Interactive Action Pillar -->
+                    <div class="action-wrapper">
+                        <button class="cta-button" id="ctaButton" aria-label="Start Conversation">
+                            <span class="btn-background"></span>
+                            <span class="btn-glow"></span>
+                            <span class="btn-content">
+                                <span class="btn-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                </span>
+                                <span class="btn-text">INICIAR CONVERSA</span>
+                                <span class="btn-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer / Metadata Stamp -->
+            <div class="card-footer">
+                <span class="meta-code">TECNOLOGIA & MARKETING</span>
+                <span class="meta-location">SÃO PAULO, BR</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
