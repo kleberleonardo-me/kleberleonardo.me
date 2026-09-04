@@ -50,8 +50,6 @@ var messages = [
     'Se falta acertar algo,',
     'meu pix é esse:',
     '<span data-k="cGl4QGtsZWJlcmxlb25hcmRvLm1l" class="pix-shadow-copy" style="color: #0066cc; text-decoration: underline; cursor: pointer; font-weight: bold;">[Clique para copiar a chave PIX]</span>',
-    '(é só tocar no endereço que copia',
-    'para você só colar) 😉',
     getCurrentTime(),
     '👋🏻',
 ];
