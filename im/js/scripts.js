@@ -220,14 +220,14 @@ var messages = [
 
   // Interceptador global para os elementos com links/ações ofuscadas
   document.addEventListener('pointerdown', function(e) {
-    // 1. Ação para WhatsApp (Usando rota api.whatsapp.com/send para abertura direta)
+    // 1. Ação para WhatsApp (Usando rota wa.me via navegação direta para abrir o aplicativo sem intermédio de pop-up)
     var waTarget = e.target.closest('.wa-shadow-link');
     if (waTarget) {
       e.preventDefault();
       var phone = decodeBase64UTF8(waTarget.getAttribute('data-a'));
       var text = decodeBase64UTF8(waTarget.getAttribute('data-m'));
-      var url = 'https://api.whatsapp.com/send?phone=' + phone + '&text=' + encodeURIComponent(text);
-      window.open(url, '_blank', 'noopener,noreferrer');
+      var url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(text);
+      window.location.href = url;
       return;
     }
 
