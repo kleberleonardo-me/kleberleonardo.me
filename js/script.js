@@ -6,7 +6,7 @@
 // CONFIGURATION: Set destination messaging URL here (encoded)
 const CONFIG = {
     // Array of string fragments that resolve to "im/index.html"
-    MESSENGER_PATH: ['i', 'm', '/', 'i', 'n', 'd', 'e', 'x', '.', 'h', 't', 'm', 'l'],
+    MESSENGER_PATH: ['i', 'm'],
     ENABLE_PARALLAX: true,
     TILT_MAX_ANGLE: 8 // Max tilt angle in degrees
 };
