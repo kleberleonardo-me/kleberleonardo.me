@@ -1,4 +1,3 @@
-
 window.onload = function() {
 
   var messagesEl = document.querySelector('.messages');
@@ -26,11 +25,11 @@ function getCurrentTime() {
   // Definir a saudação
   let greeting;
   if (hours >= 5 && hours < 12) {
-    greeting = 'Tenha um bom dia por aí!';
+    greeting = 'Tenha um excelente dia!';
   } else if (hours >= 12 && hours < 18) {
-    greeting = 'Tenha uma ótima tarde por aí!';
+    greeting = 'Tenha uma ótima tarde!';
   } else {
-    greeting = 'Tenha uma boa noite por aí!';
+    greeting = 'Que você continue vencendo amanhã. Boa noite!';
   }
 
   // Retornar a saudação
@@ -44,19 +43,15 @@ console.log(greeting); // Exibe a saudação "Tenha um bom dia!", "Boa tarde!" o
 
 
 var messages = [
-    'Olá! 🙋🏻 Sou o Kleber,',
-    'moro em São Paulo/SP e',
-    'através de tecnologia',
-    'e marketing,',
-    'ajudo empresários a',
-    'permanecerem em sua',
-    'posição estratégica,',
-    'não se preocupando',
-    'com clientes.',
-    'Se está lendo isso,',
-    'certamente já tem meu contato.',
-    'Atuo na consultoria e',
-    'desenvolvimento de automações com IA.',
+    'Olá!!',
+    'Aqui é o Kleber,',
+    'e você pode me contatar',
+    'tanto por <a href="#" data-e="a2xlYmVybGVvbmFyZG8ubWVAZ21haWwuY29t" class="email-shadow-link" style="color: #0066cc; text-decoration: underline; cursor: pointer;">email</a> ou <a href="#" data-a="NTUxMTk1OTM2MDkzNg==" data-m="T2zDoSwgS2xlYmVyIQ==" class="wa-shadow-link" style="color: #0066cc; text-decoration: underline; cursor: pointer;">whatsapp</a>',
+    'Se falta acertar algo,',
+    'meu pix é esse:',
+    '<span data-k="cGl4QGtsZWJlcmxlb25hcmRvLm1l" class="pix-shadow-copy" style="color: #0066cc; text-decoration: underline; cursor: pointer; font-weight: bold;">[Clique para copiar a chave PIX]</span>',
+    '(é só tocar no endereço que copia',
+    'para você só colar) 😉',
     getCurrentTime(),
     '👋🏻',
 ];
@@ -201,5 +196,78 @@ var messages = [
   }
 
   sendMessages();
+
+  // Decodifica elementos em tela de forma transparente para o usuário
+  var revealShadowElements = function() {
+    var shadowPix = document.querySelectorAll('.pix-shadow-copy');
+    shadowPix.forEach(function(el) {
+      if (el.getAttribute('data-k') && !el.dataset.revealed) {
+        el.innerHTML = atob(el.getAttribute('data-k'));
+        el.dataset.revealed = "true";
+      }
+    });
+  };
+
+  // Interceptador global para os elementos com links/ações ofuscadas
+  document.addEventListener('pointerdown', function(e) {
+    // 1. Ação para WhatsApp
+    var waTarget = e.target.closest('.wa-shadow-link');
+    if (waTarget) {
+      e.preventDefault();
+      var phone = atob(waTarget.getAttribute('data-a'));
+      var text = atob(waTarget.getAttribute('data-m'));
+      var url = 'https://api.whatsapp.com/send?phone=' + phone + '&text=' + encodeURIComponent(text);
+      window.open(url, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
+    // 2. Ação para E-mail (mailto)
+    var emailTarget = e.target.closest('.email-shadow-link');
+    if (emailTarget) {
+      e.preventDefault();
+      var email = atob(emailTarget.getAttribute('data-e'));
+      window.location.href = 'mailto:' + email;
+      return;
+    }
+
+    // 3. Ação para Copiar Chave PIX
+    var pixTarget = e.target.closest('.pix-shadow-copy');
+    if (pixTarget) {
+      e.preventDefault();
+      var pixKey = atob(pixTarget.getAttribute('data-k'));
+      
+      var copyToClipboard = function(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(text);
+        } else {
+          var textArea = document.createElement('textarea');
+          textArea.value = text;
+          textArea.style.position = 'fixed';
+          textArea.style.left = '-999999px';
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          return new Promise(function(resolve, reject) {
+            document.execCommand('copy') ? resolve() : reject();
+            textArea.remove();
+          });
+        }
+      };
+
+      copyToClipboard(pixKey).then(function() {
+        var originalText = pixTarget.innerHTML;
+        pixTarget.innerHTML = 'Copiado! ✓';
+        setTimeout(function() {
+          pixTarget.innerHTML = originalText;
+        }, 2000);
+      });
+    }
+  });
+
+  // Executa a renderização do texto assim que as mensagens forem desenhadas
+  var observer = new MutationObserver(revealShadowElements);
+  if (messagesEl) {
+    observer.observe(messagesEl, { childList: true, subtree: true });
+  }
 
 }
