@@ -29,7 +29,7 @@ function getCurrentTime() {
   } else if (hours >= 12 && hours < 18) {
     greeting = 'Tenha uma ótima tarde!';
   } else {
-    greeting = 'Que você continue vencendo amanhã. Boa noite!';
+    greeting = 'Tenha uma ótima noite!';
   }
 
   // Retornar a saudação
@@ -197,12 +197,22 @@ var messages = [
 
   sendMessages();
 
+  // Decodificador UTF-8 seguro para Base64 (evita caracteres corrompidos em acentos)
+  var decodeBase64UTF8 = function(str) {
+    var binaryStr = atob(str);
+    var bytes = new Uint8Array(binaryStr.length);
+    for (var i = 0; i < binaryStr.length; i++) {
+      bytes[i] = binaryStr.charCodeAt(i);
+    }
+    return new TextDecoder().decode(bytes);
+  };
+
   // Decodifica elementos em tela de forma transparente para o usuário
   var revealShadowElements = function() {
     var shadowPix = document.querySelectorAll('.pix-shadow-copy');
     shadowPix.forEach(function(el) {
       if (el.getAttribute('data-k') && !el.dataset.revealed) {
-        el.innerHTML = atob(el.getAttribute('data-k'));
+        el.innerHTML = decodeBase64UTF8(el.getAttribute('data-k'));
         el.dataset.revealed = "true";
       }
     });
@@ -210,12 +220,12 @@ var messages = [
 
   // Interceptador global para os elementos com links/ações ofuscadas
   document.addEventListener('pointerdown', function(e) {
-    // 1. Ação para WhatsApp
+    // 1. Ação para WhatsApp (Usando rota api.whatsapp.com/send para abertura direta)
     var waTarget = e.target.closest('.wa-shadow-link');
     if (waTarget) {
       e.preventDefault();
-      var phone = atob(waTarget.getAttribute('data-a'));
-      var text = atob(waTarget.getAttribute('data-m'));
+      var phone = decodeBase64UTF8(waTarget.getAttribute('data-a'));
+      var text = decodeBase64UTF8(waTarget.getAttribute('data-m'));
       var url = 'https://api.whatsapp.com/send?phone=' + phone + '&text=' + encodeURIComponent(text);
       window.open(url, '_blank', 'noopener,noreferrer');
       return;
@@ -225,7 +235,7 @@ var messages = [
     var emailTarget = e.target.closest('.email-shadow-link');
     if (emailTarget) {
       e.preventDefault();
-      var email = atob(emailTarget.getAttribute('data-e'));
+      var email = decodeBase64UTF8(emailTarget.getAttribute('data-e'));
       window.location.href = 'mailto:' + email;
       return;
     }
@@ -234,7 +244,7 @@ var messages = [
     var pixTarget = e.target.closest('.pix-shadow-copy');
     if (pixTarget) {
       e.preventDefault();
-      var pixKey = atob(pixTarget.getAttribute('data-k'));
+      var pixKey = decodeBase64UTF8(pixTarget.getAttribute('data-k'));
       
       var copyToClipboard = function(text) {
         if (navigator.clipboard && window.isSecureContext) {
